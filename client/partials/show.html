@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="wrapper" ng-controller="sessionController">
+      <header>
+
+
+      <div class="leftheader">
+        <h2>answers</h2>
+      </div>
+      <div class="rightheader">
+        <a href="#/dashboard/{{question._id}}/answers">Go to answers</a>
+        <a href="#/dashboard">home</a>
+        <a href="#/logreg">logout</a>
+      </div>
+      </header>
+      <div class="main">
+      <ul>
+        <li >
+        {{question.ques}}<br></br>
+        <ul>
+          <li ng-repeat="answer in question.answers">
+            <div style="border-bottom:1px solid black; margin-top:10px;">
+
+              {{answer.user.name}}
+            <span style="textalign:right;margin-left:10px;">
+              {{answer.likes}}<input type="submit" value="like" ng-click="like(answer)"><br>
+            </span>
+
+            <span >
+              {{answer.answer}}
+        </span><br><br>
+      </div>
+      </li>
+    </ul>
+              </li>
+    </ul>
+    </div>
+    </div>
+  </body>
+</html>

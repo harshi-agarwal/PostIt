@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+  <style>
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Sans", sans-serif;
+  }
+  .wrapper{
+    background-color: red;
+    max-width: 1500px;
+    width: 100%;
+    min-height: 1500px;
+    height: 100%;
+    margin: 0 auto;
+  	position:relative;
+      }
+      header {
+      	height:100px;
+        background-color: lightgrey;
+        color:black;
+      }
+  .leftheader{
+    max-width: 1000px;
+    width: 66.6667%;
+    height: 100px;
+    float:left;
+    /*display:inline-block;*/
+
+    text-align: left;
+    }
+  .rightheader{
+    max-width: 500px;
+    width:33.3333%;
+    height: 100px;
+    /*background-color: lavender;*/
+    float:left;
+    text-align: center;
+    }
+    .rightheader ul{
+      margin: 0;
+      padding: 0;
+    }
+    .rightheader ul li a{
+      text-decoration: none;
+      color: inherit;
+      }
+    .rightheader ul li{
+      display: inline-block;
+      list-style-type: none;
+      color: inherit;
+    }
+    .main{
+      background-color: pink;
+      max-width: 1500px;
+      width: 100%;
+      min-height: 1400px;
+      height: 99.99%;
+    }
+    
+/*media queries here*/
+@media only screen and (max-width: 728px) {
+header {
+  min-height: 100px;
+  height: 100%;
+}
+.leftheader{
+max-width: 728px;
+width: 100%;
+float: none;
+/*display:inline-block;*/
+}
+.rightheader{
+max-width: 728px;
+width:100%;
+float: none;
+text-align: left;
+}
+}
+
+
+
+  </style>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="wrapper" ng-controller="sessionController">
+      <header>
+
+
+       <div class="leftheader">
+          <h2>Welcome {{session_user.name}}</h2>
+       </div>
+       <div class="rightheader">
+        <ul>
+          <li><a href="#/dashboard/questions">Add a question</a></li>
+          <li><a href="/logout">logout</a></li>
+        </ul>
+       </div>
+      </header>
+      <div class="main">
+      <table >
+        <thead>
+          <tr>
+            <th>
+              questions
+            </th>
+            <th>
+              answers
+            </th>
+            <th>
+              actions
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="question in questions">
+            <td>
+              {{question.ques}}
+            </td>
+            <td >
+              {{question.count_ans}}
+            </td>
+            <td>
+              <a href="#/dashboard/{{question._id}}/answers">Answer</a>
+              <a href="#/dashboard/{{question._id}}/show">Show</a>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </body>
+</html>

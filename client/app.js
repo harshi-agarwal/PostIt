@@ -1,0 +1,22 @@
+var app=angular.module('app',['ngRoute']);
+app.config(function($routeProvider){
+  $routeProvider
+  .when('/logreg',{
+    templateUrl:'partials/logreg.html'
+  })
+  .when('/dashboard',{
+    templateUrl:'partials/dashboard.html'
+  })
+  .when('/dashboard/questions',{
+    templateUrl:'partials/questions.html'
+  })
+  .when('/dashboard/:id/answers',{
+    templateUrl:'partials/answers.html'
+  })
+  .when('/dashboard/:ids/show',{
+    templateUrl:'partials/show.html'
+  })
+  .otherwise({
+    redirectTo:'/logreg'
+  })
+})

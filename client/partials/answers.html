@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="wrapper" ng-controller="sessionController">
+    <header>
+      <div class="leftheader">
+        <h2>Add a Answer</h2>
+      </div>
+      <div class="rightheader">
+        <a href="#/dashboard/{{question._id}}/show">Go to Questions</a>
+        <a href="#/dashboard">home</a>
+        <a href="#/logreg">logout</a>
+      </div>
+
+    </header>
+
+    <div class="main">
+
+
+      <h2>
+        {{error}}
+
+      </h2><br>
+      <h1>{{question.ques}}</h1><br>
+
+      <form >
+        <div class="row">
+          <label class="col-1">Your Answer: </label>
+          <input class="col-2" type="text" ng-model="newanswer.answer" placeholder="answer here..">
+        </div>
+        <div class="row">
+          <label class="col-1" for="">Supporting Details:</label>
+          <textarea class="col-2" ng-model="newanswer.detail" placeholder="details here..(optional)" rows="8" cols="40"></textarea><br>
+        </div>
+        <div class="row">
+          <input class="col-1" type="submit" value="submit" ng-click="addanswer()">
+          <input class="col-1" type="submit" value="Cancel" ng-click="cancel()">
+        </div>
+
+      </form>
+    </div>
+  </div>
+  </body>
+</html>

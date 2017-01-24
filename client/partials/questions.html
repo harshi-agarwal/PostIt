@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+  </head>
+  <body>
+<div class="wrapper" ng-controller="sessionController">
+  <header>
+    <div class="leftheader">
+      <h2>New Question</h2><br>
+    </div>
+    <div class="rightheader">
+      <ul>
+        <li><a href="#/dashboard">home</a></li>
+        <li><a href="#/logreg">logout</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="main">
+    {{error}}
+    <form >
+      <div class="row">
+        <label class="col-1 ">Question:</label>
+        <input class="col-3" type="text" ng-model="newquestion.ques" placeholder="Question here">
+      </div>
+      <div class="row">
+        <label class="col-1">Description:</label>
+        <textarea class="col-3" ng-model="newquestion.desc" rows="8" cols="40" placeholder="Description (optional)"></textarea>
+      </div>
+      <div class="row">
+        <input class="col-1 col-offset-3" type="submit" value="Submit" ng-click="addquestion()">
+        <input class="col-1" type="submit" value="Cancel" ng-click="cancel()">
+      </div>
+
+    </form>
+
+
+
+</div>
+  </body>
+</html>
